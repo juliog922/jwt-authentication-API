@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "authentication api"
+version = "0.1.0"
+description = "User athentication API based on Json Web Token and FastAPI framework."
+authors = ["juliog922 <juliogalindo922@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-decouple = "^3.8"
+fastapi = "^0.109.0"
+psycopg2 = "^2.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
