@@ -8,13 +8,22 @@ services:
       dockerfile: docker/Dockerfile
     env_file:
       - dev.env
+    depends_on:
+      postgres-db:
+        condition: service_healthy
     ports:
       - "5050:5050"
 
   postgres-db:
     container_name: postgres-db
     image: postgres:13.4-alpine
+    user: postgres
     restart: on-failure
     env_file:
       - dev.env
+    healthcheck:
+            test: [ "CMD-SHELL", "pg_isready" ]
+            interval: 10s
+            timeout: 5s
+            retries: 5
 
