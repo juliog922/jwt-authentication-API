@@ -13,6 +13,8 @@ WORKDIR ${APP_DIR}
 
 COPY poetry.lock                    ${APP_DIR}/poetry.lock
 COPY pyproject.toml                 ${APP_DIR}/pyproject.toml
+COPY manage.py                      ${APP_DIR}/manage.py
+COPY api                            ${APP_DIR}/api
 
 RUN apk add --update --no-cache                                                                     \
     curl                                                                                            \
