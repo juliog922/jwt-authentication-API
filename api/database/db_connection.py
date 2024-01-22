@@ -2,11 +2,16 @@ import os
 
 import psycopg2
 
+from api.database.create import Create
+from api.database.read import Read
+from api.database.update import Update
+from api.database.delete import Delete
+
 class Postgres:
     """Postgres database connection.
     """    
     def __init__(self) -> None:
-        """Contains postgre url as attribute.
+        """Contains postgre url as attribute and CRUD instances.
         """        
         self.db_url = "postgresql://{}:{}@{}/{}".format(
         os.environ.get("POSTGRES_USER"),
@@ -14,6 +19,10 @@ class Postgres:
         os.environ.get("POSTGRES_NAME"),
         os.environ.get("POSTGRES_DB"),
     )
+        self.creator = Create(self.db_url)
+        self.reader = Read(self.db_url)
+        self.updater = Update(self.db_url)
+        self.deleter = Delete(self.db_url)
 
     def get_connection(self):
         """Give connection to CRUD functions.
@@ -31,8 +40,6 @@ class Postgres:
         """        
         try:
             conn = self.get_connection()
-            cursor = conn.cursor()
-            cursor.execute("SELECT 1+1")
             conn.close()
             return True
         except psycopg2.OperationalError:

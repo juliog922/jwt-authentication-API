@@ -80,3 +80,5 @@ class Security:
         :rtype: str
         """        
         return self.pwd_context.hash(password)
+    
+security_provider = Security()

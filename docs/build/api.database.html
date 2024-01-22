@@ -47,6 +47,8 @@
 <li><a class="reference internal" href="#module-api.database.db_connection">api.database.db_connection module</a><ul>
 <li><a class="reference internal" href="#api.database.db_connection.Postgres"><code class="docutils literal notranslate"><span class="pre">Postgres</span></code></a><ul>
 <li><a class="reference internal" href="#api.database.db_connection.Postgres.check_db_connection"><code class="docutils literal notranslate"><span class="pre">Postgres.check_db_connection()</span></code></a></li>
+<li><a class="reference internal" href="#api.database.db_connection.Postgres.create_security_table"><code class="docutils literal notranslate"><span class="pre">Postgres.create_security_table()</span></code></a></li>
+<li><a class="reference internal" href="#api.database.db_connection.Postgres.get_connection"><code class="docutils literal notranslate"><span class="pre">Postgres.get_connection()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -91,6 +93,7 @@
 <dt class="sig sig-object py" id="api.database.db_connection.Postgres">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.db_connection.</span></span><span class="sig-name descname"><span class="pre">Postgres</span></span><a class="headerlink" href="#api.database.db_connection.Postgres" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Postgres database connection.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.db_connection.Postgres.check_db_connection">
 <span class="sig-name descname"><span class="pre">check_db_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#api.database.db_connection.Postgres.check_db_connection" title="Link to this definition"></a></dt>
@@ -101,6 +104,32 @@
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.database.db_connection.Postgres.create_security_table">
+<span class="sig-name descname"><span class="pre">create_security_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.db_connection.Postgres.create_security_table" title="Link to this definition"></a></dt>
+<dd><p>Create ‘security’ table if not exists.</p>
+<p>This method creates the ‘security’ table with the specified fields:
+- id: Numeric, auto-increment, primary key
+- email: Varchar(50), unique
+- password: Varchar(50)
+- active: Boolean
+- admin: Boolean</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="api.database.db_connection.Postgres.get_connection">
+<span class="sig-name descname"><span class="pre">get_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.database.db_connection.Postgres.get_connection" title="Link to this definition"></a></dt>
+<dd><p>Give connection to CRUD functions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Postgres Database connection</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>psycopg2.connection</p>
 </dd>
 </dl>
 </dd></dl>
