@@ -12,13 +12,15 @@ class Postgres:
     """    
     def __init__(self) -> None:
         """Contains postgre url as attribute and CRUD instances.
-        """        
-        self.db_url = "postgresql://{}:{}@{}/{}".format(
-        os.environ.get("POSTGRES_USER"),
-        os.environ.get("POSTGRES_PASSWORD"),
-        os.environ.get("POSTGRES_NAME"),
-        os.environ.get("POSTGRES_DB"),
-    )
+        """      
+        self.db_url = "postgresql://{}:{}@{}:{}/{}".format(
+    os.environ.get("POSTGRES_USER"),
+    os.environ.get("POSTGRES_PASSWORD"),
+    os.environ.get("POSTGRES_NAME"),
+    os.environ.get("POSTGRES_PORT"),
+    os.environ.get("POSTGRES_DB"),
+)
+
         self.creator = Create(self.db_url)
         self.reader = Read(self.db_url)
         self.updater = Update(self.db_url)
@@ -51,7 +53,7 @@ class Postgres:
         This method creates the 'security' table with the specified fields:
         - id: Numeric, auto-increment, primary key
         - email: Varchar(50), unique
-        - password: Varchar(50)
+        - password: Varchar(250)
         - active: Boolean
         - admin: Boolean
         """        
@@ -63,7 +65,7 @@ class Postgres:
             CREATE TABLE IF NOT EXISTS security (
                 id SERIAL PRIMARY KEY,
                 email VARCHAR(50) UNIQUE NOT NULL,
-                password VARCHAR(50) NOT NULL,
+                password VARCHAR(250) NOT NULL,
                 active BOOLEAN,
                 admin BOOLEAN
             );

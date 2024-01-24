@@ -1,31 +1,23 @@
 from typing import Optional
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, validator
 
-class UserBase(BaseModel):
-    """User Shared properties.
-    """    
-    email: Optional[EmailStr] = None
-    is_active: Optional[bool] = True
-    is_admin: bool = False
 
-class UserCreate(UserBase):
+class UserCreate(BaseModel):
     """Properties to receive via API on creation.
     """    
     email: EmailStr
     password: str
 
-class UserUpdate(UserBase):
-    """Properties to receive via API on update.
-    """    
-    password: Optional[str] = None
-
-class UserInDBBase(UserBase):
-    """Additional properties to return via API.
-    """    
-    id: Optional[int] = None
-
-class UserInDB(UserInDBBase):
-    """Additional properties stored in DB.
-    """    
-    hashed_password: str
+    @validator('password', always=True)
+    def validate_password1(cls, value):
+        min_length = 8
+        errors = ''
+        if len(value) < min_length:
+            errors += 'Password must be at least 8 characters long. '
+        if not any(character.isupper() for character in value):
+            errors += 'Password should contain at least one upercase character.'
+        if errors:
+            raise ValueError(errors)
+            
+        return value

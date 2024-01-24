@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Response
 
 from api.database import postgres_controler
 
@@ -10,10 +10,10 @@ def ping():
 
     :raises HTTPException: Error in case of database have not connection.
     :return: Pong response (the server is up and running).
-    :rtype: json
+    :rtype: Response
     """    
     if postgres_controler.check_db_connection():
-        return {"data": "pong"}
+        return Response(content="pong", status_code=200)
     else:
         raise HTTPException(status_code=503, detail="Database connection error")
 

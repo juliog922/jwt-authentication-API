@@ -1,9 +1,9 @@
-.. authentication api documentation master file, created by
-   sphinx-quickstart on Sun Jan 14 21:19:45 2024.
+.. Authentication API documentation master file, created by
+   sphinx-quickstart on Tue Jan 23 20:05:50 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to authentication api's documentation!
+Welcome to Authentication API's documentation!
 ==============================================
 
 .. toctree::

@@ -20,10 +20,11 @@ class Create(CRUDBase):
             connection = psycopg2.connect(self.db_url)
             with connection.cursor() as cursor:
                 cursor.execute(
-                    "INSERT INTO security (email, password, active, admin) VALUES (%s, %s, %s, %s)",
+                    "INSERT INTO security (email, password, active, admin) VALUES (%s, %s, %s, %s);",
                     (email, password, active, admin,)
                 )
             connection.commit()
             connection.close()
-        except psycopg2.OperationalError:
+        except psycopg2.OperationalError as e:
+            print(e)
             raise 
