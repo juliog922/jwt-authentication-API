@@ -82,8 +82,7 @@
 <li><a class="reference internal" href="#module-api.database.update">api.database.update module</a><ul>
 <li><a class="reference internal" href="#api.database.update.Update"><code class="docutils literal notranslate"><span class="pre">Update</span></code></a><ul>
 <li><a class="reference internal" href="#api.database.update.Update.change_password"><code class="docutils literal notranslate"><span class="pre">Update.change_password()</span></code></a></li>
-<li><a class="reference internal" href="#api.database.update.Update.user_disabled"><code class="docutils literal notranslate"><span class="pre">Update.user_disabled()</span></code></a></li>
-<li><a class="reference internal" href="#api.database.update.Update.user_enabled"><code class="docutils literal notranslate"><span class="pre">Update.user_enabled()</span></code></a></li>
+<li><a class="reference internal" href="#api.database.update.Update.change_status"><code class="docutils literal notranslate"><span class="pre">Update.change_status()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -306,8 +305,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="api.database.update.Update.user_disabled">
-<span class="sig-name descname"><span class="pre">user_disabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.update.Update.user_disabled" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="api.database.update.Update.change_status">
+<span class="sig-name descname"><span class="pre">change_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.update.Update.change_status" title="Link to this definition"></a></dt>
 <dd><p>Change user status to inactive</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -315,20 +314,6 @@
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>psycopg2.OperationalError</strong> – In case user dont exist or database error</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="api.database.update.Update.user_enabled">
-<span class="sig-name descname"><span class="pre">user_enabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.update.Update.user_enabled" title="Link to this definition"></a></dt>
-<dd><p>Change user status to active.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>email</strong> (<em>str</em>) – User email</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>psycopg2.OperationalError</strong> – In case user dont exist or database error.</p>
 </dd>
 </dl>
 </dd></dl>

@@ -48,7 +48,10 @@
 <li><a class="reference internal" href="#api.endpoints.login.login_for_access_token"><code class="docutils literal notranslate"><span class="pre">login_for_access_token()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#module-api.endpoints.logout">api.endpoints.logout module</a></li>
+<li><a class="reference internal" href="#module-api.endpoints.logout">api.endpoints.logout module</a><ul>
+<li><a class="reference internal" href="#api.endpoints.logout.user_checkout"><code class="docutils literal notranslate"><span class="pre">user_checkout()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-api.endpoints.ping">api.endpoints.ping module</a><ul>
 <li><a class="reference internal" href="#api.endpoints.ping.ping"><code class="docutils literal notranslate"><span class="pre">ping()</span></code></a></li>
 </ul>
@@ -116,6 +119,26 @@
 </section>
 <section id="module-api.endpoints.logout">
 <span id="api-endpoints-logout-module"></span><h2>api.endpoints.logout module<a class="headerlink" href="#module-api.endpoints.logout" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="api.endpoints.logout.user_checkout">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.endpoints.logout.</span></span><span class="sig-name descname"><span class="pre">user_checkout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api.schemas.html#api.schemas.user.User" title="api.schemas.user.User"><span class="pre">User</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.endpoints.logout.user_checkout" title="Link to this definition"></a></dt>
+<dd><p>Change to enabled the user status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>current_user</strong> (<em>Annotated</em><em>[</em><a class="reference internal" href="api.schemas.html#api.schemas.user.User" title="api.schemas.user.User"><em>User</em></a><em>, </em><em>Depends</em>) – email of active user</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>HTTPException</strong> – in case that token was invalid</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>http status 200 message.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>FastAPI Response</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-api.endpoints.ping">
 <span id="api-endpoints-ping-module"></span><h2>api.endpoints.ping module<a class="headerlink" href="#module-api.endpoints.ping" title="Link to this heading"></a></h2>
