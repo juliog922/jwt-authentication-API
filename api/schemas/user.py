@@ -3,7 +3,7 @@ from typing import Optional
 from pydantic import BaseModel, EmailStr, validator
 
 
-class UserCreate(BaseModel):
+class User(BaseModel):
     """Properties to receive via API on creation.
     """    
     email: EmailStr

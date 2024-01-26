@@ -17,14 +17,13 @@ class Create(CRUDBase):
         :raises psycopg2.OperationalError: If user already exists or a connection error happens.
         """        
         try:
-            connection = psycopg2.connect(self.db_url)
-            with connection.cursor() as cursor:
-                cursor.execute(
-                    "INSERT INTO security (email, password, active, admin) VALUES (%s, %s, %s, %s);",
-                    (email, password, active, admin,)
-                )
-            connection.commit()
-            connection.close()
+            with psycopg2.connect(self.db_url) as connection:
+                with connection.cursor() as cursor:
+                    cursor.execute(
+                        "INSERT INTO security (email, password, active, admin) VALUES (%s, %s, %s, %s);",
+                        (email, password, active, admin,)
+                    )
+                connection.commit()
         except psycopg2.OperationalError as e:
             print(e)
             raise 

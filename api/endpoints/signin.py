@@ -2,12 +2,12 @@ from fastapi import APIRouter, HTTPException, Response
 
 from api.database import postgres_controler
 from api.core import security_provider
-from api.schemas import UserCreate
+from api.schemas import User
 
 sign_in_router = APIRouter()
 
 @sign_in_router.post("/sign_in", description="Create new user into database.")
-def save_new_user(user: UserCreate):
+def save_new_user(user: User):
     """Add new user to database
 
     :param user: User schema with all user attributes.

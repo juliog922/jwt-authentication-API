@@ -1,48 +1,136 @@
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-    <title>api.database package &#8212; Authentication API 0.0.1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b3523f8e" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=d45e8c67"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>api.database package &mdash; Authentication API 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
+          
+          <a href="index.html" class="icon icon-home">
+            Authentication API
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">api.database package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-api.database.create">api.database.create module</a><ul>
+<li><a class="reference internal" href="#api.database.create.Create"><code class="docutils literal notranslate"><span class="pre">Create</span></code></a><ul>
+<li><a class="reference internal" href="#api.database.create.Create.create_user"><code class="docutils literal notranslate"><span class="pre">Create.create_user()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.database.crudbase">api.database.crudbase module</a><ul>
+<li><a class="reference internal" href="#api.database.crudbase.CRUDBase"><code class="docutils literal notranslate"><span class="pre">CRUDBase</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.database.db_connection">api.database.db_connection module</a><ul>
+<li><a class="reference internal" href="#api.database.db_connection.Postgres"><code class="docutils literal notranslate"><span class="pre">Postgres</span></code></a><ul>
+<li><a class="reference internal" href="#api.database.db_connection.Postgres.check_db_connection"><code class="docutils literal notranslate"><span class="pre">Postgres.check_db_connection()</span></code></a></li>
+<li><a class="reference internal" href="#api.database.db_connection.Postgres.create_security_table"><code class="docutils literal notranslate"><span class="pre">Postgres.create_security_table()</span></code></a></li>
+<li><a class="reference internal" href="#api.database.db_connection.Postgres.get_connection"><code class="docutils literal notranslate"><span class="pre">Postgres.get_connection()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.database.delete">api.database.delete module</a><ul>
+<li><a class="reference internal" href="#api.database.delete.Delete"><code class="docutils literal notranslate"><span class="pre">Delete</span></code></a><ul>
+<li><a class="reference internal" href="#api.database.delete.Delete.delete_user"><code class="docutils literal notranslate"><span class="pre">Delete.delete_user()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.database.read">api.database.read module</a><ul>
+<li><a class="reference internal" href="#api.database.read.Read"><code class="docutils literal notranslate"><span class="pre">Read</span></code></a><ul>
+<li><a class="reference internal" href="#api.database.read.Read.check_user_status"><code class="docutils literal notranslate"><span class="pre">Read.check_user_status()</span></code></a></li>
+<li><a class="reference internal" href="#api.database.read.Read.get_hashed_password"><code class="docutils literal notranslate"><span class="pre">Read.get_hashed_password()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.database.update">api.database.update module</a><ul>
+<li><a class="reference internal" href="#api.database.update.Update"><code class="docutils literal notranslate"><span class="pre">Update</span></code></a><ul>
+<li><a class="reference internal" href="#api.database.update.Update.change_password"><code class="docutils literal notranslate"><span class="pre">Update.change_password()</span></code></a></li>
+<li><a class="reference internal" href="#api.database.update.Update.user_disabled"><code class="docutils literal notranslate"><span class="pre">Update.user_disabled()</span></code></a></li>
+<li><a class="reference internal" href="#api.database.update.Update.user_enabled"><code class="docutils literal notranslate"><span class="pre">Update.user_enabled()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-api.database">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
 
-          <div class="body" role="main">
-            
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Authentication API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">api.database package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.database.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="api-database-package">
-<h1>api.database package<a class="headerlink" href="#api-database-package" title="Link to this heading">¶</a></h1>
+<h1>api.database package<a class="headerlink" href="#api-database-package" title="Link to this heading"></a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
 <section id="module-api.database.create">
-<span id="api-database-create-module"></span><h2>api.database.create module<a class="headerlink" href="#module-api.database.create" title="Link to this heading">¶</a></h2>
+<span id="api-database-create-module"></span><h2>api.database.create module<a class="headerlink" href="#module-api.database.create" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="api.database.create.Create">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.create.</span></span><span class="sig-name descname"><span class="pre">Create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.database.create.Create" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.create.</span></span><span class="sig-name descname"><span class="pre">Create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.database.create.Create" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#api.database.crudbase.CRUDBase" title="api.database.crudbase.CRUDBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">CRUDBase</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.create.Create.create_user">
-<span class="sig-name descname"><span class="pre">create_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.create.Create.create_user" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">create_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.create.Create.create_user" title="Link to this definition"></a></dt>
 <dd><p>Sign-In Database function.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -63,25 +151,25 @@
 
 </section>
 <section id="module-api.database.crudbase">
-<span id="api-database-crudbase-module"></span><h2>api.database.crudbase module<a class="headerlink" href="#module-api.database.crudbase" title="Link to this heading">¶</a></h2>
+<span id="api-database-crudbase-module"></span><h2>api.database.crudbase module<a class="headerlink" href="#module-api.database.crudbase" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="api.database.crudbase.CRUDBase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.crudbase.</span></span><span class="sig-name descname"><span class="pre">CRUDBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.database.crudbase.CRUDBase" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.crudbase.</span></span><span class="sig-name descname"><span class="pre">CRUDBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.database.crudbase.CRUDBase" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base Class for CRUD Methods.</p>
 </dd></dl>
 
 </section>
 <section id="module-api.database.db_connection">
-<span id="api-database-db-connection-module"></span><h2>api.database.db_connection module<a class="headerlink" href="#module-api.database.db_connection" title="Link to this heading">¶</a></h2>
+<span id="api-database-db-connection-module"></span><h2>api.database.db_connection module<a class="headerlink" href="#module-api.database.db_connection" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="api.database.db_connection.Postgres">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.db_connection.</span></span><span class="sig-name descname"><span class="pre">Postgres</span></span><a class="headerlink" href="#api.database.db_connection.Postgres" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.db_connection.</span></span><span class="sig-name descname"><span class="pre">Postgres</span></span><a class="headerlink" href="#api.database.db_connection.Postgres" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Postgres database connection.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.db_connection.Postgres.check_db_connection">
-<span class="sig-name descname"><span class="pre">check_db_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#api.database.db_connection.Postgres.check_db_connection" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">check_db_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#api.database.db_connection.Postgres.check_db_connection" title="Link to this definition"></a></dt>
 <dd><p>Check Database Connection.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -95,19 +183,19 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.db_connection.Postgres.create_security_table">
-<span class="sig-name descname"><span class="pre">create_security_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.db_connection.Postgres.create_security_table" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">create_security_table</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.db_connection.Postgres.create_security_table" title="Link to this definition"></a></dt>
 <dd><p>Create ‘security’ table if not exists.</p>
 <p>This method creates the ‘security’ table with the specified fields:
 - id: Numeric, auto-increment, primary key
 - email: Varchar(50), unique
-- password: Varchar(50)
+- password: Varchar(250)
 - active: Boolean
 - admin: Boolean</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.db_connection.Postgres.get_connection">
-<span class="sig-name descname"><span class="pre">get_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.database.db_connection.Postgres.get_connection" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_connection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#api.database.db_connection.Postgres.get_connection" title="Link to this definition"></a></dt>
 <dd><p>Give connection to CRUD functions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -123,14 +211,14 @@
 
 </section>
 <section id="module-api.database.delete">
-<span id="api-database-delete-module"></span><h2>api.database.delete module<a class="headerlink" href="#module-api.database.delete" title="Link to this heading">¶</a></h2>
+<span id="api-database-delete-module"></span><h2>api.database.delete module<a class="headerlink" href="#module-api.database.delete" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="api.database.delete.Delete">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.delete.</span></span><span class="sig-name descname"><span class="pre">Delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.database.delete.Delete" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.delete.</span></span><span class="sig-name descname"><span class="pre">Delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.database.delete.Delete" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#api.database.crudbase.CRUDBase" title="api.database.crudbase.CRUDBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">CRUDBase</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.delete.Delete.delete_user">
-<span class="sig-name descname"><span class="pre">delete_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.delete.Delete.delete_user" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">delete_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.delete.Delete.delete_user" title="Link to this definition"></a></dt>
 <dd><p>Delete user from db.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -146,14 +234,14 @@
 
 </section>
 <section id="module-api.database.read">
-<span id="api-database-read-module"></span><h2>api.database.read module<a class="headerlink" href="#module-api.database.read" title="Link to this heading">¶</a></h2>
+<span id="api-database-read-module"></span><h2>api.database.read module<a class="headerlink" href="#module-api.database.read" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="api.database.read.Read">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.read.</span></span><span class="sig-name descname"><span class="pre">Read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.database.read.Read" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.read.</span></span><span class="sig-name descname"><span class="pre">Read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.database.read.Read" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#api.database.crudbase.CRUDBase" title="api.database.crudbase.CRUDBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">CRUDBase</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.read.Read.check_user_status">
-<span class="sig-name descname"><span class="pre">check_user_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#api.database.read.Read.check_user_status" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">check_user_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#api.database.read.Read.check_user_status" title="Link to this definition"></a></dt>
 <dd><p>Know if user active or inactive method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -173,7 +261,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.read.Read.get_hashed_password">
-<span class="sig-name descname"><span class="pre">get_hashed_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#api.database.read.Read.get_hashed_password" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_hashed_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#api.database.read.Read.get_hashed_password" title="Link to this definition"></a></dt>
 <dd><p>Method to get hashed password to compare against real one.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -195,14 +283,14 @@
 
 </section>
 <section id="module-api.database.update">
-<span id="api-database-update-module"></span><h2>api.database.update module<a class="headerlink" href="#module-api.database.update" title="Link to this heading">¶</a></h2>
+<span id="api-database-update-module"></span><h2>api.database.update module<a class="headerlink" href="#module-api.database.update" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="api.database.update.Update">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.update.</span></span><span class="sig-name descname"><span class="pre">Update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.database.update.Update" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">api.database.update.</span></span><span class="sig-name descname"><span class="pre">Update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#api.database.update.Update" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#api.database.crudbase.CRUDBase" title="api.database.crudbase.CRUDBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">CRUDBase</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.update.Update.change_password">
-<span class="sig-name descname"><span class="pre">change_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.update.Update.change_password" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">change_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.update.Update.change_password" title="Link to this definition"></a></dt>
 <dd><p>User change password method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -219,7 +307,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.update.Update.user_disabled">
-<span class="sig-name descname"><span class="pre">user_disabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.update.Update.user_disabled" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">user_disabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.update.Update.user_disabled" title="Link to this definition"></a></dt>
 <dd><p>Change user status to inactive</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -233,7 +321,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="api.database.update.Update.user_enabled">
-<span class="sig-name descname"><span class="pre">user_enabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.update.Update.user_enabled" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">user_enabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#api.database.update.Update.user_enabled" title="Link to this definition"></a></dt>
 <dd><p>Change user status to active.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -249,71 +337,36 @@
 
 </section>
 <section id="module-api.database">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-api.database" title="Link to this heading">¶</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-api.database" title="Link to this heading"></a></h2>
 </section>
 </section>
 
 
+           </div>
           </div>
-          
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Julio Alejandro Galindo Lima.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Authentication API</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2024, Julio Galindo Lima.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
-      
-      |
-      <a href="_sources/api.database.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>

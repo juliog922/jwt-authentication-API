@@ -10,14 +10,14 @@ sys.path.insert(0, os.path.abspath(r'../../'))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Authentication API'
-copyright = '2024, Julio Galindo Lima'
-author = 'Julio Galindo Lima'
+copyright = '2024, Julio Alejandro Galindo Lima'
+author = 'Julio Alejandro Galindo Lima'
 release = '0.0.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.autodoc', 'sphinx-pydantic']
+extensions = ['sphinx.ext.autodoc']
 
 templates_path = ['_templates']
 exclude_patterns = []

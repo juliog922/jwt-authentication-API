@@ -13,14 +13,13 @@ class Read(CRUDBase):
         :rtype: str
         """               
         try:
-            connection = psycopg2.connect(self.db_url)
-            with connection.cursor() as cursor:
-                cursor.execute(
-                    "SELECT password FROM security WHERE email = %s",
-                    (email,)
-                )
-            hashed_password = cursor.fetchone()
-            connection.close()
+            with psycopg2.connect(self.db_url) as connection:
+                with connection.cursor() as cursor:
+                    cursor.execute(
+                        "SELECT password FROM security WHERE email = %s;",
+                        (email,)
+                    )
+                    hashed_password = cursor.fetchone()[0]
             return hashed_password
         except psycopg2.OperationalError:
             raise 
@@ -35,14 +34,13 @@ class Read(CRUDBase):
         :rtype: bool
         """               
         try:
-            connection = psycopg2.connect(self.db_url)
-            with connection.cursor() as cursor:
-                cursor.execute(
-                    "SELECT active FROM security WHERE email = %s",
-                    (email,)
-                )
-            active = cursor.fetchone()
-            connection.close()
+            with psycopg2.connect(self.db_url) as connection:
+                with connection.cursor() as cursor:
+                    cursor.execute(
+                        "SELECT active FROM security WHERE email = %s",
+                        (email,)
+                    )
+                    active = cursor.fetchone()[0]
             return bool(active)
         except psycopg2.OperationalError:
             raise 

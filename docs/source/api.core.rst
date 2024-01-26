@@ -12,6 +12,14 @@ api.core.config module
    :undoc-members:
    :show-inheritance:
 
+api.core.dependencies module
+----------------------------
+
+.. automodule:: api.core.dependencies
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 api.core.security module
 ------------------------
 
